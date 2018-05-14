@@ -36,6 +36,7 @@
 }
 
 .btn-primary {
+  margin-bottom: 4px;
   background-color: $primary;
   border-color: $primary;
   &:hover,
@@ -46,6 +47,6 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(240, 95, 64,.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(87, 86, 47, 0.5) !important;
   }
 }
