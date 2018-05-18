@@ -4,6 +4,7 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 
@@ -103,6 +104,16 @@ gulp.task('js:minify', function() {
 // JS
 gulp.task('js', ['js:minify']);
 
+//minifiy html
+gulp.task('html:minify', function() {
+  return gulp.src('src/*.html')
+    .pipe(htmlmin({collapseWhitespace: true, removeComments:true}))
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('html', ['html:minify']);
+
 // Default task
 gulp.task('default', ['css', 'js', 'vendor']);
 
@@ -116,8 +127,9 @@ gulp.task('browserSync', function() {
 });
 
 // Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function() {
+gulp.task('dev', ['html','css', 'js', 'browserSync'], function() {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./js/*.js', ['js']);
+  gulp.watch('./src/*.html', ['html']);
   gulp.watch('./*.html', browserSync.reload);
 });
