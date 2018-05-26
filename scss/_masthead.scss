@@ -2,7 +2,12 @@
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('https://res.cloudinary.com/huynhat/image/upload/q_60:420/v1526363595/alex-6732-unsplash.jpg');
+  //background-image: url('https://res.cloudinary.com/huynhat/image/upload/q_60:420/v1526363595/alex-6732-unsplash.jpg');
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
   background-position: left center;
   @include background-cover;
   a:hover {
