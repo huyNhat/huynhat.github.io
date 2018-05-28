@@ -285,6 +285,10 @@ header.masthead {
   background-size: cover;
 }
 
+header.masthead .typewrite {
+  color: #558B2F;
+}
+
 header.masthead a:hover {
   text-decoration: none;
 }
