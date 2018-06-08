@@ -47,7 +47,7 @@ TxtType.prototype.tick = function() {
     that.tick();
     }, delta);
 };
-var myAttr = '["Hello There!", "I\'m huyNhat.", "A blend of technical and business minds!"]';
+var myAttr = '["Hello,", "I\'m huyNhat."]';
 var dataPer =2000;
 window.onload = function() {
   var elements = document.getElementsByClassName('typewrite');
